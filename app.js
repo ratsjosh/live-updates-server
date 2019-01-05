@@ -18,7 +18,7 @@ require('dotenv').config();
     passport.deserializeUser((username, cb) => cb(null, { username }));
 
     const app = express();
-    require('mongoose').connect('mongodb://localhost/live-game-updates-express');
+    require('mongoose').connect(process.env.NODE_DB_URI);
 
     // view engine setup
     app.set('views', path.join(__dirname, 'views'));
